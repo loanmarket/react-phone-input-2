@@ -779,7 +779,6 @@ class PhoneInput extends React.Component {
 
     const countryIsPreferred = this.state.preferredCountries.includes(this.state.selectedCountry);
     const searchedCountries = this.getSearchFilteredCountries()
-
     let countryDropdownList = searchedCountries.map((country, index) => {
       const itemClasses = classNames({
         country: true,
@@ -908,7 +907,7 @@ class PhoneInput extends React.Component {
           type='tel'
           {...this.props.inputExtraProps}
         />
-
+        {showDropdown && this.getCountryDropdownList()}
         <div
           className={flagViewClasses}
           id='flag-dropdown'
@@ -929,8 +928,6 @@ class PhoneInput extends React.Component {
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
           </div>}
-
-          {showDropdown && this.getCountryDropdownList()}
         </div>
       </div>
     );
