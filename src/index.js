@@ -907,7 +907,6 @@ class PhoneInput extends React.Component {
           type='tel'
           {...this.props.inputExtraProps}
         />
-        {showDropdown && this.getCountryDropdownList()}
         <div
           className={flagViewClasses}
           id='flag-dropdown'
@@ -928,6 +927,7 @@ class PhoneInput extends React.Component {
               {!disableDropdown && <div className={arrowClasses}></div>}
             </div>
           </div>}
+          {showDropdown && this.getCountryDropdownList()}
         </div>
       </div>
     );
